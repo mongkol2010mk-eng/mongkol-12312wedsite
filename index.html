@@ -1,16 +1,344 @@
-li>• น้ำมัน/ทางด่วน/ที่พัก ลูกค้าชำระ</li>
-          </
+DOCTYPE html>
+<<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taxi On Tour — รถเช่าเหมาพร้อมคนขับทั่วไทย</title>
+  <meta name="description" content="Taxi On Tour บริการรถเช่าเหมาพร้อมคนขับทั่วไทย 24 ชั่วโมง รถใหม่สะอาด คนขับมืออาชีพ ตรงเวลา ราคาตรงไปตรงมา ติดต่อ 063-638-5818"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* เงาอักษรช่วยให้อ่านชัดบนภาพ */
+    .text-glow { text-shadow: 0 2px 10px rgba(0,0,0,.6); }
+    /* ปุ่มลอยมุมขวาล่าง */
+    .fab { position: fixed; right: 16px; bottom: 16px; z-index: 50; display: grid; gap: 12px; }
+    .fab a { width: 52px; height: 52px; border-radius: 999px; display:flex; align-items:center; justify-content:center; font-size:22px; box-shadow: 0 10px 22px rgba(0,0,0,.35); transition: transform .15s ease; }
+    .fab a:hover { transform: translateY(-3px) scale(1.05); }
+    /* แท็กจังหวัดเล็กๆ */
+    .pill { padding:.35rem .6rem; border-radius:999px; font-size:.85rem; line-height:1; white-space:nowrap; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.12)}
+  </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 antialiased">
 
-      <
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-gradient-to-r from-neutral-900/90 to-neutral-800/90 backdrop-blur border-b border-neutral-700/60">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <h1 class="text-xl sm:text-2xl font-extrabold tracking-wide">
+        <span class="bg-gradient-to-r from-amber-400 via-lime-300 to-cyan-300 bg-clip-text text-transparent">Taxi On Tour</span>
+        <span class="text-neutral-300 font-semibold">— รถเช่าเหมาพร้อมคนขับทั่วไทย</span>
+      </h1>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#about" class="hover:text-amber-300">เกี่ยวกับเรา</a>
+        <a href="#services" class="hover:text-amber-300">รถบริการ</a>
+        <a href="#regions" class="hover:text-amber-300">บริการทั่วไทย</a>
+        <a href="#reviews" class="hover:text-amber-300">รีวิว</a>
+        <a href="#contact" class="hover:text-amber-300">ติดต่อ/จอง</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero (โปรไฟล์หน้าปก) -->
+  <section class="relative h-[78vh] min-h-[540px] w-full overflow-hidden">
+    <!-- รูปรถชัด สีเด่น -->
+    <img
+      src="https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=1920&q=80"
+      alt="Taxi On Tour Cover Car"
+      class="absolute inset-0 w-full h-full object-cover" />
+    <!-- เลเยอร์ไล่เฉดเข้มด้านล่าง + เบลอนิด -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-black/40 to-black/80"></div>
+
+    <!-- ข้อความเลื่อนขึ้นด้านบน ไม่ทับตัวรถ -->
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 h-full flex flex-col justify-start pt-16 sm:pt-20">
+      <div class="max-w-3xl">
+        <h2 class="text-glow text-4xl sm:text-5xl font-black leading-tight">
+          <span class="bg-gradient-to-r from-amber-300 via-yellow-300 to-emerald-300 bg-clip-text text-transparent">
+            เดินทางทั่วไทย สบายใจไปกับเรา
+          </span>
+        </h2>
+        <p class="mt-4 text-lg sm:text-xl text-neutral-200 text-glow">
+          รถใหม่สะอาด • คนขับมืออาชีพ • ตรงต่อเวลา • ราคาตรงไปตรงมา
+        </p>
+        <!-- เอาปุ่มโทรสีน้ำเงินที่ทับบนรถออกตามคำสั่ง -->
+      </div>
+    </div>
+  </section>
+
+  <!-- เกี่ยวกับฉัน/เรา (ยาว ชัดเจน) -->
+  <section id="about" class="py-16 px-4 sm:px-6">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-3xl font-extrabold mb-6">
+        <span class="bg-gradient-to-r from-emerald-300 to-cyan-300 bg-clip-text text-transparent">ทำไมต้อง Taxi On Tour</span>
+      </h3>
+      <div class="grid lg:grid-cols-2 gap-8 text-neutral-200 leading-8">
+        <p class="text-base sm:text-lg">
+          เราคือทีม <strong>รถเช่าเหมา “พร้อมคนขับ”</strong> ที่เน้นความปลอดภัย ความสะดวก และความคุ้มค่าเป็นหลัก
+          คนขับทุกคนผ่านการคัดเลือกและอบรมด้านมารยาท/เส้นทาง/ความปลอดภัย พร้อมประสบการณ์ดูแลลูกค้าทั้งท่องเที่ยว
+          ธุรกิจ รับ–ส่งสนามบิน และทริปครอบครัวทั่วประเทศ เราใช้รถสภาพใหม่ สะอาด ตรวจเช็กสม่ำเสมอ
+          มีประกันภัยครบถ้วน ให้คุณเดินทางได้อย่างสบายใจ ตรงเวลา และโปร่งใสเรื่องค่าใช้จ่าย
+        </p>
+        <p class="text-base sm:text-lg">
+          จุดเด่นของเรา: <strong>วางแผนเส้นทางร่วมกับลูกค้า</strong> แบบยืดหยุ่น, ให้คำแนะนำสถานที่–จุดแวะ,
+          แจ้งสถานะเรียลไทม์, และ <strong>บริการ 24 ชั่วโมง</strong> ทีมงานตอบกลับไว ดูแลตั้งแต่เริ่มจอง
+          จนถึงส่งถึงปลายทาง นอกจากนี้ เรายังรับงานองค์กร/เหมาทริประยะยาว และงานด่วนในเมือง/ต่างจังหวัด
+          ด้วยราคาเป็นธรรม ชัดเจนตั้งแต่ต้น
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- รถบริการ (ย่อขนาดการ์ด ไม่มีชื่อยี่ห้อ/รุ่น) -->
+  <section id="services" class="py-14 px-4 sm:px-6 bg-neutral-900/60">
+    <div class="max-w-7xl mx-auto">
+      <h3 class="text-3xl font-extrabold text-center mb-10">
+        <span class="bg-gradient-to-r from-amber-300 to-pink-300 bg-clip-text text-transparent">รถที่ให้บริการ</span>
+      </h3>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- รถเก๋ง -->
+        <div class="rounded-2xl overflow-hidden border border-neutral-700 bg-neutral-900 hover:border-emerald-400/60 transition">
+          <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=1200&q=70" alt="รถเก๋ง" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-emerald-300">รถเก๋ง</h4>
+            <p class="text-sm text-neutral-300 mt-1">คล่องตัว นั่งสบาย เหมาะทริปในเมือง/ส่วนตัว</p>
+          </div>
+        </div>
+        <!-- SUV -->
+        <div class="rounded-2xl overflow-hidden border border-neutral-700 bg-neutral-900 hover:border-cyan-400/60 transition">
+          <img src="https://images.unsplash.com/photo-1513624954087-8731e25907fd?auto=format&fit=crop&w=1200&q=70" alt="SUV" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-cyan-300">SUV</h4>
+            <p class="text-sm text-neutral-300 mt-1">กว้างขวาง รองรับสัมภาระ ครอบครัว/กลุ่มเล็ก</p>
+          </div>
+        </div>
+        <!-- รถตู้ VIP -->
+        <div class="rounded-2xl overflow-hidden border border-neutral-700 bg-neutral-900 hover:border-fuchsia-400/60 transition">
+          <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=70" alt="รถตู้ VIP" class="w-full h-44 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-fuchsia-300">รถตู้ VIP</h4>
+            <p class="text-sm text-neutral-300 mt-1">นั่งสบาย อุปกรณ์ครบ สำหรับหมู่คณะ/ทริประยะยาว</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- แพ็คเกจราคา (ย่อกระชับ) -->
+      <div class="mt-10 grid gap-6 md:grid-cols-3">
+        <div class="p-5 rounded-2xl border border-neutral-700 bg-neutral-900">
+          <h5 class="font-bold text-amber-300 mb-2">กรุงเทพฯ/ปริมณฑล</h5>
+          <p class="text-sm">เริ่มต้น <strong>1,500 บาท/วัน</strong></p>
+          <ul class="text-sm mt-2 space-y-1 text-neutral-300">
+            <li>• 8 ชั่วโมง / 100 กม.</li>
+            <li>• รวมคนขับมืออาชีพ</li>
+            <li>• ค่าน้ำมัน/ทางด่วน ลูกค้าชำระ</li>
+          </ul>
+        </div>
+        <div class="p-5 rounded-2xl border border-neutral-700 bg-neutral-900">
+          <h5 class="font-bold text-emerald-300 mb-2">ต่างจังหวัด</h5>
+          <p class="text-sm">เริ่มต้น <strong>2,500 บาท/วัน</strong></p>
+          <ul class="text-sm mt-2 space-y-1 text-neutral-300">
+            <li>• 10 ชั่วโมง / 200 กม.</li>
+            <li>• คนขับเชี่ยวชาญเส้นทาง</li>
+            <li>• น้ำมัน/ทางด่วน/ที่พัก ลูกค้าชำระ</li>
+          </ul>
+        </div>
+        <div class="p-5 rounded-2xl border border-neutral-700 bg-neutral-900">
+          <h5 class="font-bold text-pink-300 mb-2">ทัวร์ส่วนตัว VIP</h5>
+          <p class="text-sm">แพ็กเกจปรับตามต้องการ</p>
+          <ul class="text-sm mt-2 space-y-1 text-neutral-300">
+            <li>• รถตู้ VIP หรูหรา</li>
+            <li>• วางแผนเส้นทางให้</li>
+            <li>• ดูแลทั้งทริป</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- บริการทั่วไทย (ตารางจังหวัดเล็กๆ ครบทุกจังหวัด 5 ภาค) -->
+  <section id="regions" class="py-16 px-4 sm:px-6">
+    <div class="max-w-7xl mx-auto">
+      <h3 class="text-3xl font-extrabold text-center mb-10">
+        <span class="bg-gradient-to-r from-cyan-300 via-sky-300 to-violet-300 bg-clip-text text-transparent">บริการครอบคลุมทั่วไทย</span>
+      </h3>
+
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <!-- ภาคเหนือ 17 -->
+        <div class="rounded-2xl border border-neutral-700 bg-neutral-900/60 p-5">
+          <h4 class="font-bold text-emerald-300 mb-3">ภาคเหนือ</h4>
+          <div class="grid grid-cols-2 gap-2 text-sm">
+            <span class="pill">เชียงใหม่</span><span class="pill">เชียงราย</span>
+            <span class="pill">ลำพูน</span><span class="pill">ลำปาง</span>
+            <span class="pill">แพร่</span><span class="pill">น่าน</span>
+            <span class="pill">พะเยา</span><span class="pill">แม่ฮ่องสอน</span>
+            <span class="pill">ตาก</span><span class="pill">สุโขทัย</span>
+            <span class="pill">พิษณุโลก</span><span class="pill">พิจิตร</span>
+            <span class="pill">อุตรดิตถ์</span><span class="pill">กำแพงเพชร</span>
+            <span class="pill">นครสวรรค์</span><span class="pill">เพชรบูรณ์</span>
+            <span class="pill">อุทัยธานี</span>
+          </div>
+        </div>
+
+        <!-- อีสาน 20 -->
+        <div class="rounded-2xl border border-neutral-700 bg-neutral-900/60 p-5">
+          <h4 class="font-bold text-cyan-300 mb-3">ภาคตะวันออกเฉียงเหนือ</h4>
+          <div class="grid grid-cols-2 gap-2 text-sm">
+            <span class="pill">เลย</span><span class="pill">หนองบัวลำภู</span>
+            <span class="pill">หนองคาย</span><span class="pill">บึงกาฬ</span>
+            <span class="pill">อุดรธานี</span><span class="pill">สกลนคร</span>
+            <span class="pill">นครพนม</span><span class="pill">มุกดาหาร</span>
+            <span class="pill">กาฬสินธุ์</span><span class="pill">ขอนแก่น</span>
+            <span class="pill">ชัยภูมิ</span><span class="pill">มหาสารคาม</span>
+            <span class="pill">ร้อยเอ็ด</span><span class="pill">ยโสธร</span>
+            <span class="pill">อำนาจเจริญ</span><span class="pill">อุบลราชธานี</span>
+            <span class="pill">บุรีรัมย์</span><span class="pill">สุรินทร์</span>
+            <span class="pill">ศรีสะเกษ</span><span class="pill">นครราชสีมา</span>
+          </div>
+        </div>
 
         <!-- ภาคตะวันออก 7 -->
-        <
-  <!-- ปุ่มลอย (/LINE/WhatsApp) -->
+        <div class="rounded-2xl border border-neutral-700 bg-neutral-900/60 p-5">
+          <h4 class="font-bold text-pink-300 mb-3">ภาคตะวันออก</h4>
+          <div class="grid grid-cols-2 gap-2 text-sm">
+            <span class="pill">ชลบุรี</span><span class="pill">ระยอง</span>
+            <span class="pill">จันทบุรี</span><span class="pill">ตราด</span>
+            <span class="pill">ฉะเชิงเทรา</span><span class="pill">ปราจีนบุรี</span>
+            <span class="pill">สระแก้ว</span>
+          </div>
+        </div>
+
+        <!-- ภาคกลาง 19 (รวม กทม. และตะวันตกบางจังหวัด) -->
+        <div class="rounded-2xl border border-neutral-700 bg-neutral-900/60 p-5">
+          <h4 class="font-bold text-amber-300 mb-3">ภาคกลาง</h4>
+          <div class="grid grid-cols-2 gap-2 text-sm">
+            <span class="pill">กรุงเทพมหานคร</span><span class="pill">นนทบุรี</span>
+            <span class="pill">ปทุมธานี</span><span class="pill">พระนครศรีอยุธยา</span>
+            <span class="pill">อ่างทอง</span><span class="pill">ลพบุรี</span>
+            <span class="pill">สิงห์บุรี</span><span class="pill">สระบุรี</span>
+            <span class="pill">ชัยนาท</span><span class="pill">สุพรรณบุรี</span>
+            <span class="pill">นครปฐม</span><span class="pill">สมุทรสาคร</span>
+            <span class="pill">สมุทรสงคราม</span><span class="pill">สมุทรปราการ</span>
+            <span class="pill">กาญจนบุรี</span><span class="pill">ราชบุรี</span>
+            <span class="pill">นครนายก</span><span class="pill">เพชรบุรี</span>
+            <span class="pill">ประจวบคีรีขันธ์</span>
+          </div>
+        </div>
+
+        <!-- ภาคใต้ 14 -->
+        <div class="rounded-2xl border border-neutral-700 bg-neutral-900/60 p-5 md:col-span-2 lg:col-span-1">
+          <h4 class="font-bold text-lime-300 mb-3">ภาคใต้</h4>
+          <div class="grid grid-cols-2 gap-2 text-sm">
+            <span class="pill">ชุมพร</span><span class="pill">ระนอง</span>
+            <span class="pill">สุราษฎร์ธานี</span><span class="pill">นครศรีธรรมราช</span>
+            <span class="pill">พังงา</span><span class="pill">ภูเก็ต</span>
+            <span class="pill">กระบี่</span><span class="pill">ตรัง</span>
+            <span class="pill">พัทลุง</span><span class="pill">สตูล</span>
+            <span class="pill">สงขลา</span><span class="pill">ปัตตานี</span>
+            <span class="pill">ยะลา</span><span class="pill">นราธิวาส</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- รีวิว -->
+  <section id="reviews" class="py-14 px-4 sm:px-6 bg-neutral-900/60">
+    <div class="max-w-6xl mx-auto">
+      <h3 class="text-3xl font-extrabold text-center mb-10">
+        <span class="bg-gradient-to-r from-fuchsia-300 to-sky-300 bg-clip-text text-transparent">รีวิวลูกค้า</span>
+      </h3>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl border border-neutral-700 bg-neutral-900 p-6">
+          <p class="text-yellow-300 mb-2">★★★★★</p>
+          <p class="text-neutral-200">“เดินทางสะดวกสบาย คนขับสุภาพ รถสะอาดเหมือนใหม่”</p>
+          <p class="text-sm text-neutral-400 mt-3">— คุณสมชาย</p>
+        </div>
+        <div class="rounded-2xl border border-neutral-700 bg-neutral-900 p-6">
+          <p class="text-yellow-300 mb-2">★★★★☆</p>
+          <p class="text-neutral-200">“บริการดีมาก ตรงเวลา วางแผนเส้นทางให้ครบ แนะนำครับ”</p>
+          <p class="text-sm text-neutral-400 mt-3">— คุณวิภา</p>
+        </div>
+        <div class="rounded-2xl border border-neutral-700 bg-neutral-900 p-6">
+          <p class="text-yellow-300 mb-2">★★★★★</p>
+          <p class="text-neutral-200">“คนขับมืออาชีพ ดูแลดีทั้งทริป ครอบครัวประทับใจมาก”</p>
+          <p class="text-sm text-neutral-400 mt-3">— คุณอนุชา</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ติดต่อ/จอง -->
+  <section id="contact" class="py-16 px-4 sm:px-6">
+    <div class="max-w-5xl mx-auto">
+      <h3 class="text-3xl font-extrabold mb-6">
+        <span class="bg-gradient-to-r from-amber-300 via-rose-300 to-lime-300 bg-clip-text text-transparent">ติดต่อเรา / จองรถ</span>
+      </h3>
+
+      <div class="grid gap-8 md:grid-cols-2">
+        <!-- ช่องทางติดต่อ -->
+        <div class="space-y-3 text-neutral-200">
+          <p>📞 โทร: <a href="tel:0636385818" class="font-semibold text-emerald-300 hover:underline">063-638-5818</a></p>
+          <p>💬 LINE: <a href="https://lin.ee/JVim1m1" target="_blank" rel="noopener" class="font-semibold text-emerald-300 hover:underline">คลิกเพื่อแชท LINE</a></p>
+          <p>🟢 WhatsApp: <a href="https://wa.me/66636385818" target="_blank" rel="noopener" class="font-semibold text-emerald-300 hover:underline">+66 63 638 5818</a></p>
+          <p>✉️ Email: 
+            <a
+              href="mailto:mongkol2010nk@gmail.com?subject=จองรถเช่าพร้อมคนขับ&body=สวัสดีครับ ทีม Taxi On Tour ต้องการจองรถ รายละเอียดตามนี้:%0A- ชื่อ:%0A- เบอร์ติดต่อ:%0A- วันที่/เวลาเดินทาง:%0A- ต้นทาง → ปลายทาง:%0A- ประเภทรถ:%0A- จำนวนผู้โดยสาร:%0Aขอบคุณครับ"
+              class="font-semibold text-sky-300 hover:underline">
+              mongkol2010nk@gmail.com
+            </a>
+          </p>
+
+          <!-- ลิงก์เว็บไซต์หลัก (ท้ายหน้าให้คลิกได้ทันที) -->
+          <p>🌍 เว็บไซต์หลัก: 
+            <a href="https://mongkol2010.simdif.com" target="_blank" rel="noopener"
+               class="font-semibold text-amber-300 hover:underline">
+              mongkol2010.simdif.com
+            </a>
+          </p>
+        </div>
+
+        <!-- ฟอร์มส่งเมล (mailto) -->
+        <form action="mailto:mongkol2010nk@gmail.com" method="post" enctype="text/plain"
+              class="bg-neutral-900/60 border border-neutral-700 rounded-2xl p-5 space-y-3">
+          <input type="text" name="ชื่อ-นามสกุล" placeholder="ชื่อ-นามสกุล" required class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2">
+          <input type="tel" name="เบอร์โทร" placeholder="เบอร์โทรศัพท์ (สำหรับติดต่อกลับ)" required class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2">
+          <input type="email" name="อีเมล" placeholder="อีเมล (ถ้ามี)" class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2">
+          <input type="text" name="ประเภทรถ" placeholder="ประเภทรถที่ต้องการ (เก๋ง / SUV / รถตู้ VIP)" required class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2">
+          <input type="text" name="วันเวลา" placeholder="วันที่และเวลาเดินทาง" required class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2">
+          <input type="number" min="1" name="ผู้โดยสาร" placeholder="จำนวนผู้โดยสาร" required class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2">
+          <textarea name="เส้นทาง" rows="4" placeholder="รายละเอียดเส้นทาง / จุดรับ-ส่ง" class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-3 py-2"></textarea>
+          <button type="submit" class="w-full py-3 rounded-xl font-bold bg-emerald-400 text-neutral-900 hover:bg-emerald-300 transition">
+            ส่งการจองทางอีเมล
+          </button>
+          <p class="text-xs text-neutral-400">* หากอุปกรณ์ของคุณไม่รองรับการส่งเมลอัตโนมัติ กรุณาคัดลอกข้อมูลแล้วส่งมาที่ <span class="underline">mongkol2010nk@gmail.com</span></p>
+        </form>
+      </div>
+
+      <!-- จุดรับ-ส่งสนามบิน -->
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        <div class="rounded-2xl border border-neutral-700 p-5 bg-neutral-900/60">
+          <h4 class="font-bold text-amber-300 mb-2">จุดรับ-ส่งสนามบิน</h4>
+          <ul class="text-neutral-300 text-sm space-y-1">
+            <li>• สุวรรณภูมิ (BKK): ชั้น 2 ผู้โดยสารขาเข้า ประตู 3–5</li>
+            <li>• ดอนเมือง (DMK): อาคาร 1 ผู้โดยสารขาเข้า ประตู 1–5</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl border border-neutral-700 p-5 bg-neutral-900/60">
+          <h4 class="font-bold text-cyan-300 mb-2">ลิงก์เว็บไซต์สำรอง</h4>
+          <a href="https://mongkol2010.simdif.com" target="_blank" rel="noopener"
+             class="inline-flex items-center gap-2 text-sky-300 hover:underline">
+            mongkol2010.simdif.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ปุ่มลอย (โทร/LINE/Email/WhatsApp) -->
   <div class="fab">
-    <a>
+    <a href="tel:0636385818" title="โทร" class="bg-emerald-500 text-neutral-900">📞</a>
     <a href="https://lin.ee/JVim1m1" target="_blank" rel="noopener" title="LINE" class="bg-green-500 text-white">LINE</a>
+    <a href="mailto:mongkol2010nk@gmail.com?subject=จองรถเช่าพร้อมคนขับ" title="Email" class="bg-sky-500 text-white">✉️</a>
     <a href="https://wa.me/66636385818" target="_blank" rel="noopener" title="WhatsApp" class="bg-emerald-600 text-white">WA</a>
   </div>
+
   <!-- Footer -->
   <footer class="border-t border-neutral-800 bg-neutral-900 py-8">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center">
